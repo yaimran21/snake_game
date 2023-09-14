@@ -35,6 +35,8 @@ while game_is_on:
     if snake.head.xcor() > 285 or snake.head.xcor() < -285 or snake.head.ycor() > 285 or snake.head.ycor() < -285:
         game_is_on = False
         scoreboard.game_over()
+
+    # Check head touch head
     for segment in snake.segments[1:]:
         if snake.head.distance(segment) < 15:
             game_is_on = False
